@@ -27,10 +27,7 @@
     methods: {
       goToDetail() {
         let iid = this.goods.iid
-        this.$router.push({
-          path: '/detail',
-          query: {iid}
-        })
+        this.$router.push({path: '/detail', query: {iid}})
       }
     }
   }

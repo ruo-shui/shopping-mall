@@ -1,12 +1,13 @@
 <template>
   <div id="home">
-    <nav-bar class="nav-bar">
+    <nav-bar class="nav-bar sticky" >
       <div slot="center">购物街</div>
     </nav-bar>
     <scroll class="content"
             ref="scroll"
             @scroll="contentScroll"
             @pullingUp="loadMore"
+            :data="showGoodList"
             :pull-up-load="true"
             :probe-type="3">
       <home-swiper :banners="banners" ref="hSwiper"></home-swiper>
@@ -117,7 +118,6 @@
           const goodList = res.data.list
           this.goodList[type].List.push(...goodList)
           this.goodList[type].page += 1
-          console.log(res)
           this.$refs.scroll.finishPullUp()
         })
       }
@@ -143,7 +143,10 @@
     position: relative;
     height: 100vh;
   }
-
+  .sticky{
+    position: sticky;
+    top:0;
+  }
   .content {
     position: absolute;
     top: 44px;

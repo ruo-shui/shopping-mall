@@ -16,6 +16,12 @@
         type: Number,
         default: 0
       },
+      data: {
+        type: Array,
+        default: () => {
+          return []
+        }
+      },
       pullUpLoad: {
         type: Boolean,
         default: false
@@ -55,6 +61,11 @@
       },
       scrollGetY(){
         return this.scroll.y
+      }
+    },
+    watch: {
+      data() {
+        setTimeout(this.refresh, 20)
       }
     },
     mounted() {
