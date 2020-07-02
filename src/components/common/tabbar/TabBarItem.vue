@@ -26,7 +26,7 @@
         return this.$route.path.indexOf(this.link) !== -1
       },
       activeStyle() {
-        return this.isActive ? {'color': 'red'} : {}
+        return this.isActive ? {'color': '#ff8198'} : {}
       }
     },
     methods: {

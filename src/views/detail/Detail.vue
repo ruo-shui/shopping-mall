@@ -12,13 +12,11 @@
     <back-top class="back-top" v-show="showBackTop" @backTop="backTop">
       <img src="~assets/img/common/top.png" alt="">
     </back-top>
-    <detail-bottom-bar @addToCart=""></detail-bottom-bar>
+    <detail-bottom-bar @addToCart="addToCart"></detail-bottom-bar>
   </div>
 </template>
 
 <script>
-  import Scroll from 'components/common/scroll/Scroll'
-
   import DetailNavBar from './childComps/DetailNavBar'
   import DetailSwiper from './childComps/DetailSwiper'
   import DetailBaseInfo from './childComps/DetailBaseInfo'
@@ -37,7 +35,6 @@
   export default {
     name: "Detail",
     components: {
-      Scroll,
       DetailNavBar,
       DetailSwiper,
       DetailBaseInfo,
@@ -128,6 +125,18 @@
       //点击切换主题
       titleClick(index) {
         window.scrollTo(0, this.themeTops[index])
+      },
+      //添加购物车
+      addToCart(){
+        const obj = {}
+        obj.iid = this.iid
+        obj.imgURL = this.topImages[0]
+        obj.title = this.goods.title
+        obj.desc = this.goods.desc
+        obj.newPrice = this.goods.nowPrice
+        this.$store.dispatch('addCart',obj).then(res => {
+          this.$toast.show(res)
+        })
       }
     }
   }
