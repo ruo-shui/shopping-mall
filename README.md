@@ -57,7 +57,7 @@ npm run build    #打包项目
 ### 购物车
 
 <div>
-    <img src="./screenshot/购物车.jpg" style="zoom:25%;"/>
+    <img src="./screenshot/购物车.jpg" style="zoom:80%;"/>
 </div>
 
 使用vuex来管理购物车中的商品，在详情页中可以将商品加入购物车，将商品中的信息放入vuex中，然后在购物车界面可以拿到这些数据，实现选择和计算总价等功能。
@@ -65,8 +65,8 @@ npm run build    #打包项目
 ### 分类
 
 <div>
-    <img src="./screenshot/分类1.jpg" style="zoom:25%;"/>
-    <img src="./screenshot/分类2.jpg" style="zoom:25%;"/>
+    <img src="./screenshot/分类1.jpg" style="zoom:80%;"/>
+    <img src="./screenshot/分类2.jpg" style="zoom:80%;"/>
 </div>
 
 分类页面中通过设置div的overflow为scroll来实现左边的菜单栏和右边的商品栏能够分别滚动。
@@ -90,7 +90,7 @@ this.categoryData = {...this.categoryData}
 ### 我的
 
 <div>
-    <img src="./screenshot/我的.jpg" style="zoom:25%;"/>
+    <img src="./screenshot/我的.jpg" style="zoom:80%;"/>
 </div>
 
 在写“我的”时候又踩了一个坑，没有看懂老师的svg图标哪来的，并且用老师的代码也出不来图标，所以上边的几个图标我是从阿里的图标库自己找了几个图标，后来发现老师是封装了一个svg图标库，以组件形式放在了App.vue中，通过svg的use属性直接引用。
